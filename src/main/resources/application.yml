@@ -1,8 +1,9 @@
 spring:
   jpa:
     generate-ddl: true
-
-
+  security:
+    oauth2.client.registration.google.client-id: 433811206487-aee1b66gj5g21maaoebchflip6163ebt.apps.googleusercontent.com
+    oauth2.client.registration.google.client-secret: 1-ZngZkGReAxpNW_JN7teqAI
 
 
 ---

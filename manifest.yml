@@ -1,7 +1,7 @@
 ---
 applications:
-- name: persref
+- name: bootweb
   memory: 1G
   random-route: true
-  path: build/libs/persref-0.0.1.jar
+  path: build/libs/bootweb-0.0.1.jar
 
