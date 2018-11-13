@@ -60,9 +60,17 @@ public class DBInitializer {
 
 
         ToReadItem item = new ToReadItem();
-        item.setId("1234");
-        item.setName("fancy read");
+        item.setName("SAFe lean agile leaders");
+        item.setUrl("https://www.scaledagileframework.com/lean-agile-leaders");
+        item.setPriority(8);
         toReadService.save(item);
+
+        item = new ToReadItem();
+        item.setName("SAFe lean agile leaders");
+        item.setUrl("https://www.scaledagileframework.com/lean-agile-leaders");
+        item.setPriority(8);
+        toReadService.save(item);
+
 
         logger.info("Database initialization finished.");
     }
