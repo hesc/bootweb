@@ -8,8 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
 import java.util.List;
 
 
@@ -30,5 +33,27 @@ public class ToReadController {
         uiModel.addAttribute("items", items);
         return "toread";
     }
+
+
+    @GetMapping(value = "/edit/{id}")
+    public String updateForm(@PathVariable String id, Model model) {
+        model.addAttribute("item", toReadService.findById(id));
+        return "update";
+    }
+
+    @GetMapping(value = "/new")
+    public String createForm(Model uiModel) {
+        ToReadItem toReadItem = new ToReadItem();
+        uiModel.addAttribute("item", toReadItem);
+        return "update";
+    }
+
+
+    @PostMapping
+    public String saveItem(@Valid ToReadItem toReadItem) {
+        toReadService.save(toReadItem);
+        return "redirect:/toread/";
+    }
+
 
 }

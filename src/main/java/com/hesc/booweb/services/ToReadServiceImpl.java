@@ -1,15 +1,13 @@
 package com.hesc.booweb.services;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.hesc.booweb.entities.ToReadItem;
+import com.hesc.booweb.repos.ToReadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hesc.booweb.entities.LastCustomer;
-import com.hesc.booweb.entities.ToReadItem;
-import com.hesc.booweb.repos.LastCustomerRepository;
-import com.hesc.booweb.repos.ToReadRepository;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ToReadServiceImpl implements ToReadService {
@@ -29,11 +27,14 @@ public class ToReadServiceImpl implements ToReadService {
     }
 
     @Override
+    public Optional<ToReadItem> findById(String id) {
+        return toReadRepository.findById(id);
+    }
+
+    @Override
     public ToReadItem save(ToReadItem toReadItem) {
         return toReadRepository.save(toReadItem);
     }
-
-
 
 
 }

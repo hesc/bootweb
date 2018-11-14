@@ -1,11 +1,14 @@
 package com.hesc.booweb.services;
 
-import java.util.List;
-
-import com.hesc.booweb.entities.LastCustomer;
 import com.hesc.booweb.entities.ToReadItem;
+
+import java.util.List;
+import java.util.Optional;
 
 public interface ToReadService {
     List<ToReadItem> findAll();
+
+    public Optional<ToReadItem> findById(String id);
+
     ToReadItem save(ToReadItem toReadItem);
 }

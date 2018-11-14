@@ -22,7 +22,6 @@
         <div class="lead">
             <table class="table table-striped">
                 <tr>
-                    <th>D</th>
                     <th>Name</th>
                     <th>Link</th>
                     <th>Category</th>
@@ -31,11 +30,11 @@
 
                 </tr>
                 <tr th:each="item : ${items}">
-                    <td><a th:text="${item.id}" th:href="${ '/item/' + item.id}">Details</a></td>
-                    <td th:text="${item.name}">Singer First Name</td>
-                    <td th:text="${item.url}">Singer Last Name</td>
-                    <td th:text="${item.status}">Phone</td>
-                    <td th:text="${item.priority}">Phone</td>
+                    <td><a th:text="${item.name}" th:href="${ '/toread/edit/' + item.id}">Name</a></td>
+                    <td><a th:text="${item.url}" th:href="${item.url}">Link</a></td>
+                    <td th:text="${item.category}">Category</td>
+                    <td th:text="${item.status}">Status</td>
+                    <td th:text="${item.priority}">Prio</td>
                 </tr>
             </table>
         </div>

@@ -52,7 +52,7 @@ public class LastCustomerController {
     public String createForm(Model uiModel) {
         LastCustomer lastcustomer = new LastCustomer();
         uiModel.addAttribute("lastcustomer", lastcustomer);
-        return "update";
+        return "updatelast";
     }
 
 

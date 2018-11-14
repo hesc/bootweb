@@ -1,6 +1,7 @@
 package com.hesc.booweb.services;
 
 import com.hesc.booweb.entities.LastCustomer;
+import com.hesc.booweb.entities.Status;
 import com.hesc.booweb.entities.ToReadItem;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -63,12 +64,16 @@ public class DBInitializer {
         item.setName("SAFe lean agile leaders");
         item.setUrl("https://www.scaledagileframework.com/lean-agile-leaders");
         item.setPriority(8);
+        item.setStatus(Status.created);
+        item.setCategory("Lean Agile");
         toReadService.save(item);
 
         item = new ToReadItem();
-        item.setName("SAFe lean agile leaders");
-        item.setUrl("https://www.scaledagileframework.com/lean-agile-leaders");
+        item.setName("Bluewin");
+        item.setUrl("https://bluewin.ch");
         item.setPriority(8);
+        item.setCategory("News");
+        item.setStatus(Status.created);
         toReadService.save(item);
 
 
