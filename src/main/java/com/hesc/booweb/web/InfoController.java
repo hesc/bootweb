@@ -1,7 +1,6 @@
 package com.hesc.booweb.web;
 
 import com.hesc.booweb.util.ApplicationInfo;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.Cloud;
 import org.springframework.cloud.app.ApplicationInstanceInfo;
@@ -10,6 +9,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +28,13 @@ public class InfoController {
     public InfoController(Environment springEnvironment) {
         this.springEnvironment = springEnvironment;
     }
+
+
+    @RequestMapping(value = "/user")
+    public String user(Principal principal) {
+        return "";
+    }
+
 
     @RequestMapping(value = "/appinfo")
     public ApplicationInfo info() {
